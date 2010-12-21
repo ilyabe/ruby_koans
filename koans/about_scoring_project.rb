@@ -31,6 +31,60 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 def score(dice)
   # You need to write this method
+  i = 1
+  dice_rolls = [] # index 0 will be the number of ones, index 1 will be the number of twos, etc.
+  while i <= 6
+    die_roll = dice.count(i) 
+    dice_rolls << die_roll 
+    i += 1 
+  end
+  
+  sum = 0
+  if dice_rolls == []
+    sum += 0
+  end
+  
+  if dice_rolls[0] == 3
+    sum += 1000
+  end
+  
+  if dice_rolls[0] < 3
+    sum += dice_rolls[0] * 100
+  end
+  
+  if dice_rolls[0] > 3
+    sum += 1000 + ( (rolls[0] - 3)*100 )
+  end
+  
+  if dice_rolls[1] >= 3
+    sum += 200
+  end
+  
+  if dice_rolls[2] >= 3
+    sum += 300
+  end
+  
+  if dice_rolls[3] >= 3
+    sum += 400
+  end
+  
+  if dice_rolls[4] < 3
+    sum += dice_rolls[4]*50
+  end
+  
+  if dice_rolls[4] == 3
+    sum += 500
+  end
+  
+  if dice_rolls[4] > 3
+    sum += 500 + ( (dice_rolls[4] - 3)*50 )
+  end
+  
+  if dice_rolls[5] >= 3
+    sum += 600
+  end
+
+sum
 end
 
 class AboutScoringProject < EdgeCase::Koan

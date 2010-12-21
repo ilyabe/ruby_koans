@@ -12,17 +12,17 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # missing handler and any other supporting methods.  The specification
 # of the Proxy class is given in the AboutProxyObjectProject koan.
 
-class Proxy
+class Proxy # Proxy object
   def initialize(target_object)
     @object = target_object
     # ADD MORE CODE HERE
+	
   end
-
   # WRITE CODE HERE
+  
 end
 
 # The proxy object should pass the following Koan:
-#
 class AboutProxyObjectProject < EdgeCase::Koan
   def test_proxy_method_returns_wrapped_object
     # NOTE: The Television class is defined below

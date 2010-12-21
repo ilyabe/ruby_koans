@@ -13,8 +13,27 @@
 # and
 #   about_triangle_project_2.rb
 #
-def triangle(a, b, c)
-  # WRITE THIS CODE
+def triangle(a, b, c)  
+  equal_sides = 0
+  if a.equal? b
+	  equal_sides += 1
+  end
+  
+  if a.equal? c
+	  equal_sides += 1
+  end
+  
+  if b.equal? c
+	  equal_sides += 1
+  end
+  
+  if equal_sides == 3
+	  :equilateral
+  elsif equal_sides == 1
+	  :isosceles
+  else
+	  :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
